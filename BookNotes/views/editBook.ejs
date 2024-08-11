@@ -1,0 +1,24 @@
+<%- include('partials/header.ejs') %>
+
+<body class="raleway-journal">
+    <h1 class="edit-title playwrite-gb-s-title">Edit</h1>
+    <form class="review-form" action="/updated" method="POST">
+        <!-- Hide the book_id from the user (unneccessary) -->
+        <input type="hidden" name="id" value="<%= book.book_id %>">
+        <label for="title">Book Title: </label>
+        <input type="text" class="title" name="title" value="<%= book.title %>" required>
+        <label for="author">Author: </label>
+        <input type="text" class="author" name="author" value="<%= book.author %>" required>
+        <label for="isbn">ISBN: </label>
+        <input type="text" class="isbn" name="isbn" value="<%= book.isbn %>" required>
+        <label for="review">Review: </label>
+        <textarea class="review-text" name="review" placeholder="Review here ✏️" rows="5" cols="50"><%= book.review %></textarea>
+        <label for="rating">Rating: </label>
+        <input type="number" class="rating" name="rating" min="0" max="10" value="<%= book.rating %>" required>
+        <div class="edit-options">
+            <button class="save" type="submit">Save ✔️</button>
+            <button class="delete" type="submit" formaction="/delete"><i class="bi bi-trash3"></i></button>
+        </div>
+    </form>
+</body>
+</html>

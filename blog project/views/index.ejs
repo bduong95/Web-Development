@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+<main>
+    <h2>Recent Blog Posts</h2>
+    <hr>
+    <div class="blogPost-container">
+        <ul class="postList">
+            <% list.forEach((entry) => { %>
+            <li>
+                <div class="list-contents">
+                    <div class="col-1">Post #: <strong><%= entry.entryNum %></strong> | <%= entry.date %></div> 
+                    <% if (entry.blogPost.length > 50) { %>
+                    <div class="col-2">➡️ <%= entry.blogPost.substring(0, 50) %></div><div class="col-3"> ... <a class="" href="/update/<%= entry.entryNum %>">Read more</a></div>
+                    <% } else { %>
+                    <div class="col-2a">➡️ <%= entry.blogPost %> </div>
+                    <% } %>
+                </div> 
+                <button><a href="/update/<%= entry.entryNum %>">Edit</a></button>
+            </li>
+            <%  }) %>
+        </ul>
+        <button class="addButton"><a href="/newEntry">New Entry</a></button>
+    </div>
+</main>
+<%- include("partials/footer.ejs") %>

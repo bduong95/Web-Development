@@ -1,0 +1,18 @@
+<%- include("partials/header.ejs") %>
+<main>
+    <h2 class="header-title">Add Entry</h2>
+    <div class="newEntry-container">
+        
+        <form action="/add" method="POST">
+            <div class="add-content">
+                <div class="date">
+                    <label for="date">Date:</label>
+                    <input class="calender" type="date" name="date" value="<%= new Date().toISOString().split('T')[0] %>" min="2024-01-01" max="2030-12-31">
+                </div>               
+                <textarea class="blogPost" name="blogPost"></textarea>
+                <input id="postButton" type="submit" value="Post">
+            </div>
+        </form>
+    </div>
+</main>
+<%- include("partials/footer.ejs") %>

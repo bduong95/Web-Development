@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+<main>
+    <h2 class="header-title">Edit Entry</h2>
+    <form method="POST">
+        <div class="editForm">
+    
+
+            <div class="date">
+                <label for="date">Date:</label>
+                <input class="calender" type="date"  name="date" value="<%= date %>" min="2024-01-01" max="2030-12-31">
+            </div>
+            <div class="entry-list">
+                <label for="entryNum">Entry #</label>
+            <input type="number" id="entryNum" name="entryNum" value="<%= entryNum %>" min="" readonly>
+            </div>
+            <textarea class="blogPost green" name="blogPost"><%= blogPost %></textarea>
+            <!-- <input type="submit" value="Update/Delete"> -->
+            <div class="button-options">
+                <button id="buttonUpdate" type="submit" formaction="/updated">Update</button>
+            </div>
+            <button id="buttonDelete" type="submit" formaction="/delete"><i class="bi bi-trash3"></i></button> 
+        </div>
+    </form>
+</main>
+<%- include("partials/footer.ejs") %>

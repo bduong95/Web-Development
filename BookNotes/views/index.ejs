@@ -1,0 +1,80 @@
+<%- include('partials/header.ejs') %>
+
+<body class="nunito-body">
+    <div class="main-container">
+    <button class="addReview">New Review 🔖</button>
+    <form class="review-form" action="/add" method="POST" hidden="true">
+        <label>Book Title: </label>
+        <input class="title" type="text" name="title" required>
+        <label>Author: </label>
+        <input class="author" type="text" name="author" required>
+        <label>ISBN: </label>
+        <input class="isbn" type="text" name="isbn" required>
+        <label>Review: </label>
+        <textarea class="review-text" placeholder=" -- Review here ✏️ --" rows="5" cols="50" name="review"></textarea>
+        <label>Rating: </label>
+        <input class="rating" type="number" min="0" max="10" name="rating" required>
+        <div class="addButton"><button type="submit">Add ➕</button></div>
+    </form>
+    <form class="sort-form" action="/sort" method="POST">
+        <label for="sort-options">Sort By:</label>
+        <select id="sort-options" name="sort">
+            <option disabled selected>-- Select --</option>
+            <option value="posted DESC">Newest</option>
+            <option value="posted ASC">Oldest</option>
+            <option value="rating DESC">Ratings: High</option>
+            <option value="rating ASC">Ratings: Low</option>
+            <option value="title ASC">Title: A-Z</option>
+            <option value="title DESC">Title: Z-A</option>
+            <option value="author ASC">Author: A-Z</option>
+            <option value="author DESC">Author: Z-A</option>
+        </select>
+    </form>
+        <% for (let book of booksList) { %>
+            <div class="review-container">
+                <div class="book-cover">
+                    <img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg">
+                    <button><a href="/edit/<%= book.book_id %>">Edit</a></button>
+                </div>
+                <div class="book-title"><h5><%= book.title %> <span class="book-author">(by <%= book.author %>)</span></h5></div>
+                <p class="book-rating">Rating: <%= book.rating %></p>
+                <p class="book-review"><b>Review:</b><br><%= book.review %></p>
+                <div class="book-posting"><p>Posted: <%= new Date(book.posted).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></p></div>
+            </div>
+        <% } %>
+    </div>
+
+    <script>
+        // Submit sort request on selection
+        document.querySelector("#sort-options").addEventListener('change', function() {
+            this.form.submit();
+        });
+
+        document.querySelector(".addReview").addEventListener("click", addNewReview);
+        function addNewReview() {
+            document.querySelector(".review-form").removeAttribute("hidden");
+            document.querySelector(".addReview").setAttribute("hidden", true);
+        }
+
+        function setRatingColor() {
+            const ratings = document.querySelectorAll(".book-rating");
+            ratings.forEach(rating => {
+                let currentRating = parseFloat(rating.innerHTML.split(': ')[1]);
+                if (currentRating < 4)
+                {
+                    rating.classList.add("rating-low");
+                }
+                else if (currentRating >= 4 && currentRating <= 7)
+                {
+                    rating.classList.add("rating-medium");
+                }
+                else {
+                    rating.classList.add("rating-high");
+                }
+            });
+        }
+        setRatingColor();
+
+    </script>
+</body>
+</html>

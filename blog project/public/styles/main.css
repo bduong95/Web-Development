@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+
+.raleway-journal {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    margin-bottom: 50px;
+}
+
+/* Navbar */
+
+.navbar {
+    background: darkblue;
+    font-family: calibri;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navdiv {
+    width: 100%;
+    display: flex;
+    align-items: center; /* horizontally */
+    justify-content: space-between;
+}
+
+.name a {
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: 550;
+    color: white;
+}
+
+.bi-pen {
+    margin-left: 5px;
+    color: white;
+    font-size: 25px;
+}
+
+.navbar-items {
+    display: flex;
+    width: 30%;
+    justify-content: space-around; 
+    align-items: center;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.navbar-items li a {
+    color: white;
+    font-size: 18px;
+    font-weight: 650;
+}
+
+.signInOut {
+    color: white;
+}
+
+.signInOut button {
+    background-color: black;
+    border: solid 1px white;
+    border-radius: 20%;
+    margin: 0 2px;
+}
+
+.signInOut button:hover {
+    background-color: rgba(255, 255, 0, 0.836);
+}
+
+.signInOut a:hover {
+    color: black;
+}
+
+.signInOut a {
+    color: white;
+    font-weight: 600;
+}
+
+/* Footer */
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.footer {
+    color: white;
+    padding: 50px 0;
+    background-color: darkblue;
+    font-family: "Poppins", sans-serif;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-col {
+    width: auto;
+    justify-content: start;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.footer-col h4::before {
+    content:'';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul {
+    padding: 0;
+}
+
+.footer p {
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.footer-col ul li a {
+    font-size: 15px;
+    font-weight: 300px;
+    color: #4d4d4d;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff8a;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    background-color: #4d4d4d;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #4d4d4d;
+    background-color: white;
+}
+
+/* responsive */
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+/* Main */
+.readMore {
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+h2 {
+    margin: 20px 0 0 32px;
+
+}
+
+.blogPost-container li {
+    display: grid;
+    grid-template-columns: auto 75px;
+    grid-template-rows: auto;
+    margin-bottom: 10px;
+    width: 50%;
+    padding: 5px;
+    border: solid 1px rgb(212, 212, 212);
+}
+
+.blogPost-container li:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.blogPost-container li button {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border-radius: 20%;
+    background-color: rgb(47, 120, 255);
+}
+
+.blogPost-container li button:hover {
+    background-color: darkblue;
+}
+
+.blogPost-container li button a {
+    color: white;
+    font-weight: 500;
+}
+
+.addButton {
+    margin-bottom: 20px;
+    margin-left: 32px;
+    padding: 15px;
+    background-color: rgb(47, 120, 255);
+    border-radius: 50%;
+    border: solid 2px rgb(212, 212, 212);
+}
+
+.addButton:hover {
+    background-color: darkblue;
+}
+
+.addButton a {
+    color: white;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+.list-contents {
+    display: grid;
+    grid-template-columns: 250px auto auto;
+    grid-template-rows: auto;
+}
+
+.col-1 {
+    width: auto;
+
+}
+
+.col-2 {
+    width: auto;
+}
+
+.col-3 {
+    width: auto;
+}
+
+.col-2a {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+/* Add entry */
+
+.newEntry-container {
+    margin-left: 50px;
+}
+
+.header-title{
+    font-weight: 600;
+    margin: 0;
+    margin-top: 30px;
+    margin-left: 50px;
+    color: #e6638f;
+    width: auto;
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+.add-content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 30px;
+}
+
+.date label {
+    font-weight: 700;
+}
+
+.calender {
+    color: #e91e63;
+    border-color: #e91e63;
+    padding: 2px;
+    font-weight: 700;
+    background-color: #e7e7e7;
+}
+
+.blogPost {
+    margin-top: 20px;
+    height: 550px;
+    width: 100%;
+    font-weight: 650;
+    font-size: 15px;
+    color: #3b3b3b;
+}
+
+.blogPost:active {
+    border-color: #e91e63;
+    border-width: 5px;
+}
+
+#postButton {
+    width: 120px;
+    height: 120px;
+    margin:auto;
+    margin-top: 20px;
+    color: darkblue;
+    background-color: white;
+    padding: 30px;
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 15px;
+    border-color: #000000;
+}
+
+#postButton:hover {
+    background-color:#e7e7e7;
+    border-color: #e91e63;
+    border-width: 10px;
+}
+
+.editForm {
+    width: 50%;
+    margin-left: 50px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.button-options {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#buttonUpdate {
+    font-weight: 700;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border-color: #e91e63;
+}
+
+#buttonUpdate:hover {
+    color: white;
+    background-color: #e91e63;
+}
+
+#buttonDelete {
+    position: absolute;
+    bottom: 90px;
+    right: 0px;
+    background-color: rgb(255, 87, 87);
+    color: white;
+    border-style: none;
+    border-radius: 30%;
+    padding: 5px;
+    font-size: 20px;
+}
+
+#buttonDelete:hover {
+    background-color: red;
+    border: solid 1px black;
+}
+
+.green {
+    font-weight: 700;
+    color: #e91e63;
+}
+
+.entry-list {
+ margin-top: 15px;
+ font-weight: 700;
+}
+
+.entry-list input {
+    width: 50px;
+    color: #e91e63;
+    font-weight: 800;
+    text-align: end;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>NBA API App</title>
+</head>
+<body>
+    <header>
+        <h1>Header here</h1>
+    </header>
+
+    <div class="main">
+        <% if (locals.city && locals.name) { %>
+            <div class="team-title">
+                <h1><%= city %> <%= name %></h1>
+                <div class="weather">
+                    <img src="<%= weather.image %>">
+                    <h3><%= Math.round(weather.temp) %>°C</h3>
+                </div>
+            </div>
+            <div class="team-logo">
+                <img src="images/<%= logo %>" alt="team logo">
+            </div>
+        <% } else { %>
+            <h1>No team</h1>
+        <% } %>
+
+        <form class="form" method="post">
+            <div class="new-team">
+                <select name="teamID">
+                    <option value="" disabled>-- Teams --</option>
+                    <% if (locals.teams) { %>
+                    <% for (let i = 0; i < 30; i++) { %>
+                        <option value="<%= teams[i].id %>"><%= teams[i].name %></option>
+                    <% } %>
+                    <% } %>
+                </select>
+                <input id="teamIDbutton" type="submit" value="Show 🏀" formaction="/getTeam">
+            </div>
+            <input id="generateTeam_button" type="submit" value="New Team" formaction="/randomTeam">
+        </form>
+
+        <% if (locals.error) { %>
+        <p class="error"><%= error %></p>
+        <% } %>       
+    </div>
+
+    <footer>Footer here</footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<form class="review-form" action="/add" method="POST">
+    <label>Book Title: </label>
+    <input class="title" type="text" name="title" required>
+    <label>Author: </label>
+    <input class="author" type="text" name="author" required>
+    <label>ISBN: </label>
+    <input class="isbn" type="text" name="isbn" required>
+    <label>Review: </label>
+    <textarea placeholder="Review here ✏️" rows="5" cols="50" name="review"></textarea>
+    <label>Rating: </label>
+    <input class="rating" type="number" min="0" max="10" name="rating" required>
+    <div class="addButton"><button type="submit">Add ➕</button></div>
+</form> 

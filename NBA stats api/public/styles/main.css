@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(150, 150, 150);
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    color: white;
+    background-color: rgb(39, 39, 39);
+    padding: 20px;
+    
+}
+
+footer {
+    flex: 1;
+    margin-top: 100px;
+    width: 100%;
+    color: white;
+    background-color: rgb(39, 39, 39);
+    padding: 20px;
+}
+
+.main {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    width: 50%;
+    height: auto;
+    margin-top: 50px;
+}
+
+.new-team {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    border-right: solid 1px black;
+}
+
+#teamIDbutton {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    justify-self: center;
+    margin-top: 10px;
+    color: black;
+    font-size: 18px;
+    font-weight: 650;
+    background-color: rgba(233, 233, 102, 0.932);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#teamIDbutton:hover {
+    color: rgb(34, 34, 34);
+    background-color: rgba(233, 233, 102, 0.616);
+    border-color: white;
+    font-family: fantasy;
+    font-weight: 250;
+}
+
+#teamIDbutton:active {
+    color: rgba(233, 233, 102, 0.616);
+    background-color: rgb(34, 34, 34);
+    border-color: white;
+    border-style: dotted;
+    border-width: 5px;
+    font-family: fantasy;
+    font-weight: 250;
+}
+
+#generateTeam_button {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    justify-self: center;
+    margin-top: 29px;
+    color: black;
+    font-size: 18px;
+    font-weight: 650;
+    background-color: rgba(255, 205, 171, 0.932);
+    transition: background-color 0.6s, color 0.6s;
+}
+
+#generateTeam_button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgba(253, 135, 0, 0.87);
+    border-color: white;
+    font-family: fantasy;
+    font-weight: 250;
+}
+
+#generateTeam_button:active {
+    color: black;
+    border-color: black;
+    border-style: dashed;
+    border-width: 5px;
+    font-family: fantasy;
+    font-weight: 250;
+}
+
+.team-title {
+    display: inline-flex;
+    width: auto;
+    align-items: center;
+}
+
+.weather {
+    position: relative;
+} 
+
+.weather h3 {
+    position: absolute;
+    top: 60%;
+    left: 80%;
+    font-size: 1.5em;
+}
+
+.error {
+    color: red;
+}
+
+.team-logo {
+    width: 350px;
+    height: 350px;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.team-logo img {
+    height: 125px;
+    width: auto;
+}
